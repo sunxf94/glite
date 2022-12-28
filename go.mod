@@ -1,4 +1,4 @@
-module glite
+module github.com/sunxf94/glite
 
 go 1.18
 
