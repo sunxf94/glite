@@ -7,3 +7,4 @@ go语言简易开发脚手架
 
 ## 依赖
 - [gin](https://github.com/gin-gonic/gin)
+- [zerolog](github.com/rs/zerolog)
