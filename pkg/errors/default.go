@@ -7,18 +7,18 @@ var (
 )
 
 func New(code int, msg string) *Err {
-	return &Err{Code: code, Msg: msg}
+	return &Err{code: code, msg: msg}
 }
 
 type Err struct {
-	Code int
-	Msg  string
+	code int
+	msg  string
 }
 
 func (e *Err) HasErr() bool {
-	return ErrNone.Code == e.Code
+	return e.code != ErrNone.code
 }
 
 func (e *Err) Message() string {
-	return e.Msg
+	return e.msg
 }
