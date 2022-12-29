@@ -11,8 +11,7 @@ func NewHTTP(addr ...string) IHttp {
 
 type IHttp interface {
 	Run() error
-	HandleGET(path string, hello func(c *gin.Context))
-	HandlePOST(path string, hello func(c *gin.Context))
+	Handle(method, path string, handler func(c *gin.Context))
 }
 
 type Http struct {
@@ -20,12 +19,8 @@ type Http struct {
 	engine *gin.Engine
 }
 
-func (h *Http) HandleGET(path string, handler func(c *gin.Context)) {
-	h.engine.GET(path, handler)
-}
-
-func (h *Http) HandlePOST(path string, handler func(c *gin.Context)) {
-	h.engine.POST(path, handler)
+func (h *Http) Handle(method, path string, handler func(c *gin.Context)) {
+	h.engine.Handle(method, path, handler)
 }
 
 func (h *Http) Run() error {

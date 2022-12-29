@@ -22,3 +22,7 @@ func (e *Err) HasErr() bool {
 func (e *Err) Message() string {
 	return e.msg
 }
+
+func (e *Err) Code() int {
+	return e.code
+}
