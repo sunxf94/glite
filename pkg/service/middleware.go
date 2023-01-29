@@ -47,8 +47,8 @@ func Sessions(key, secret string) gin.HandlerFunc {
 	store.Options(sessions.Options{
 		Path:     "/",
 		MaxAge:   60 * 30,
-		SameSite: http.SameSiteLaxMode,
-		Secure:   false,
+		SameSite: http.SameSiteNoneMode,
+		Secure:   true,
 	})
 	return sessions.Sessions(key, store)
 }
