@@ -29,6 +29,5 @@ func (h *Http) Use(handler gin.HandlerFunc) {
 }
 
 func (h *Http) Run() error {
-	h.engine.Use()
 	return h.engine.Run(h.addr...)
 }
