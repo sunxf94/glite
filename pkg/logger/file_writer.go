@@ -83,9 +83,11 @@ func (w *fileWriter) newFilename() string {
 }
 
 func (w *fileWriter) monitor() {
+	t := time.NewTicker(60 * time.Second)
+	defer t.Stop()
 	for {
 		select {
-		case <-time.Tick(time.Second):
+		case <-t.C:
 			if !w.needChanged() {
 				continue
 			}
