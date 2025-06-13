@@ -2,7 +2,7 @@ package mysql
 
 import (
 	_ "github.com/go-sql-driver/mysql"
-	_ "github.com/mattn/go-sqlite3"
+	_ "modernc.org/sqlite"
 
 	"github.com/jmoiron/sqlx"
 )
