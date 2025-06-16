@@ -23,7 +23,7 @@ func Init(cfg Config) (err error) {
 }
 
 func InitWithSQLite(cfg Config) (err error) {
-	if db, err = sqlx.Open("sqlite3", cfg.DBName); err != nil {
+	if db, err = sqlx.Open("sqlite", cfg.DBName); err != nil {
 		return err
 	}
 
